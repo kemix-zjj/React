@@ -50,13 +50,13 @@ React用于构建用户界面的JS库。是一个将数据渲染为HTML视图的
 
 1. 使用 JSX 创建虚拟 DOM（更推荐）
 
-   ```js
+  ```js
   const VDOM = (
     <h1 id = {MyId.toLocaleUpperCase()>
       <span className = "sss" style = {{fontSize:'50px'}}>sss</span>
     </h1>
     )
-   ```
+  ```
   
 2. 使用 JS 创建 虚拟 DOM
 
