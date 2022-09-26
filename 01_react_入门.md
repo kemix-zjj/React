@@ -16,89 +16,25 @@ React用于构建用户界面的JS库。是一个将数据渲染为HTML视图的
 
 - 创建一个容器
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  ```
-  <body>
-  ```
-
-  ```
-      <div id="container">
-  ```
-
-  ```
-          //...
-  ```
-
-  ```
-      </div>
-  ```
-
-  ```
-  </body>
-  ```
-
-  
+ ```js
+ <body>
+    <div id="container">
+        //...
+    </div>
+</body>
+ ````
 
 - 创建虚拟 DOM，渲染到容器中
 
-  
-
-  ```
-  
-  ```
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  ```
+  ```js 
   const VDOM = <h1>Hello,React</h1> /* 此处一定不要写引号，因为不是字符串 */
   ```
-
   
-
 - 渲染虚拟 DOM 到页面
-
   
-
-  ```
-  
-  ```
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  ```
+  ```js
   ReactDOM.render(VDOM,document.getElementById('test'))
   ```
-
-  
 
   ReactDOM.render函数可以直接对包含JSX表达式的变量进行渲染。该函数的第一个参数为要渲染的对象，第二个参数为对象插入的节点位置。 
 
@@ -114,71 +50,20 @@ React用于构建用户界面的JS库。是一个将数据渲染为HTML视图的
 
 1. 使用 JSX 创建虚拟 DOM（更推荐）
 
-   
-
-   ```
-   
-   ```
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   ```
-   const VDOM = (
-   ```
-
-   ```
-       <h1 id = {MyId.toLocaleUpperCase()>
-   ```
-
-   ```
-         <span className = "sss" style = {{fontSize:'50px'}}>sss</span>
-   ```
-
-   ```
-       </h1>
-   ```
-
-   ```
-       )
-   ```
-
-   
-
+  ```js
+  const VDOM = (
+    <h1 id = {MyId.toLocaleUpperCase()>
+      <span className = "sss" style = {{fontSize:'50px'}}>sss</span>
+    </h1>
+    )
+  ```
+  
 2. 使用 JS 创建 虚拟 DOM
 
-   
-
-   ```
-   
-   ```
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   ```
+   ```js
    // 1.创建虚拟DOM[在这使用了js的语法]React.createElement(标签,标签属性,内容)
-   ```
-
-   ```
    const VDOM = React.createElement('h1',{id:"title"},"nihao")
    ```
-
-   
 
 ## React JSX
 
@@ -208,85 +93,32 @@ React用于构建用户界面的JS库。是一个将数据渲染为HTML视图的
 
 动态渲染出列表数据
 
-```
-
-```
-
-```
+```js
 <script type="text/babel" >
-```
 
-```
         //模拟一些数据
-```
-
-```
         const data = ['Angular','React','Vue']
-```
 
-```
         //1.创建虚拟DOM
-```
 
-```
         const VDOM = (
-```
-
-```
             <div>
-```
-
-```
                 <h1>前端js框架列表</h1>
-```
-
-```
                 <ul>
-```
-
-```
-                    {
-```
-
-```
+                   {
                         data.map((item,index)=>{
-```
-
-```
                             return <li key={index}>{item}</li>
-```
-
-```
                         })
-```
-
-```
                     }
-```
-
-```
                 </ul>
-```
-
-```
             </div>
-```
 
-```
         )
-```
 
-```
         //2.渲染虚拟DOM到页面
-```
-
-```
         ReactDOM.render(VDOM,document.getElementById('test'))
-```
-
-```
     </script>
-```
+  ```
 
 ![img](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/269069843470446f8f19cc6388e2b537~tplv-k3u1fbpfcp-watermark.image?)
 
